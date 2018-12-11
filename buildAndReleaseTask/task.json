@@ -16,8 +16,8 @@
   ],
   "version": {
     "Major": 0,
-    "Minor": 0,
-    "Patch": 14
+    "Minor": 2,
+    "Patch": 18
   },
   "releaseNotes": "Script task consistency. Added support for macOS and Linux.",
   "demands": [
@@ -34,50 +34,28 @@
   ],
   "inputs": [
     {
-      "name": "ConnectedServiceNameSelector",
-      "aliases": [
-        "azureConnectionType"
-      ],
-      "type": "pickList",
-      "label": "Azure Connection Type",
-      "required": false,
-      "helpMarkDown": "",
-      "defaultValue": "ConnectedServiceNameARM",
-      "options": {
-        "ConnectedServiceName": "Azure Classic",
-        "ConnectedServiceNameARM": "Azure Resource Manager"
-      }
-    },
-    {
       "name": "ConnectedServiceName",
-      "aliases": [
-        "azureClassicSubscription"
-      ],
-      "type": "connectedService:Azure",
-      "label": "Azure Classic Subscription",
-      "defaultValue": "",
-      "required": true,
-      "helpMarkDown": "Azure Classic subscription to configure before running PowerShell",
-      "visibleRule": "ConnectedServiceNameSelector = ConnectedServiceName"
-    },
-    {
-      "name": "ConnectedServiceNameARM",
       "aliases": [
         "azureSubscription"
       ],
       "type": "connectedService:AzureRM",
-      "label": "Azure Subscription",
+      "label": "Azure subscription",
       "defaultValue": "",
       "required": true,
-      "helpMarkDown": "Azure Resource Manager subscription to configure before running PowerShell",
-      "visibleRule": "ConnectedServiceNameSelector = ConnectedServiceNameARM",
+      "groupName": "AzureDetails",
+      "helpMarkDown": "Select the Azure Resource Manager subscription for the deployment."
+    },
+    {
+      "name": "resourceGroupName",
+      "type": "pickList",
+      "label": "Resource group",
+      "required": true,
+      "groupName": "AzureDetails",
+      "helpMarkDown": "Provide the name of a resource group.",
       "properties": {
-        "EndpointFilterRule": "ScopeLevel == ManagementGroup || ScopeLevel != ManagementGroup"
+        "EditableOptions": "True"
       }
     },
-
-
-
     {
       "name": "targetType",
       "type": "radio",

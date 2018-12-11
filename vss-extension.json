@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "azure-clean-resourcegroup-deployment",
   "name": "Clean Azure Resourcegroup deployment",
-  "version": "0.0.15",
+  "version": "0.2.18",
   "publisher": "cwlabsconsultingservices",
   "targets": [
     {
