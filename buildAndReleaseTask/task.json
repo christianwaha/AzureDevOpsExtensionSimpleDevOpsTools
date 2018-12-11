@@ -15,9 +15,9 @@
     "DeploymentGroup"
   ],
   "version": {
-    "Major": 0,
-    "Minor": 2,
-    "Patch": 23
+    "Major": 1,
+    "Minor": 0,
+    "Patch": 34
   },
   "releaseNotes": "Script task consistency. Added support for macOS and Linux.",
   "demands": [

@@ -1,9 +1,11 @@
 Trace-VstsEnteringInvocation $MyInvocation
 Import-VstsLocStrings "$PSScriptRoot\Task.json"
 
+# string constants
+$otherVersion = "OtherVersion"
+$latestVersion = "LatestVersion"
+
 # Get inputs.
-
-
 
 $targetType = Get-VstsInput -Name targetType
 $keepAmount = Get-VstsInput -Name amountKeep
@@ -11,7 +13,8 @@ $keepDays = Get-VstsInput -Name daysKeep
 
 $__vsts_input_errorActionPreference = Get-VstsInput -Name errorActionPreference
 $__vsts_input_failOnStandardError = Get-VstsInput -Name FailOnStandardError
-$targetAzurePs = Get-VstsInput -Name TargetAzurePs
+#$targetAzurePs = Get-VstsInput -Name TargetAzurePs
+$targetAzurePs = $latestVersion
 $customTargetAzurePs = Get-VstsInput -Name CustomTargetAzurePs
 
 # Validate the script path and args do not contains new-lines. Otherwise, it will
@@ -20,17 +23,15 @@ $customTargetAzurePs = Get-VstsInput -Name CustomTargetAzurePs
 
 if ($targetType -eq "days") {
 	$cleanupscript = "$PSScriptRoot\CleanupDays.ps1"
-	$scriptArguments = "-Value" . $keepDays
+	$scriptArguments = "-Value $keepDays"
 } elseif ($targetType -eq "amount") {
 	$cleanupscript = "$PSScriptRoot\CleanupAmount.ps1"
-	$scriptArguments = "-Value" . $keepAmount
+	$scriptArguments = "-Value $keepAmount"
 } else {
 
 }
 
-# string constants
-$otherVersion = "OtherVersion"
-$latestVersion = "LatestVersion"
+
 
 if ($targetAzurePs -eq $otherVersion) {
     if ($customTargetAzurePs -eq $null) {

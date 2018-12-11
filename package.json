@@ -1,6 +1,6 @@
 {
   "name": "azure-clean-resourcegroup-deployments",
-  "version": "0.2.23",
+  "version": "1.0.34",
   "description": "",
   "main": "AzureCleanupPowerShell.ps1",
   "scripts": {
