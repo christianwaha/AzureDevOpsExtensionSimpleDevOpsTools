@@ -1,5 +1,5 @@
 {
-  "name": "AzureCleanResourceGroupDeployment",
+  "name": "azurecleanresourcegroupdeployment",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,10 +10,13 @@
     "type": "git",
     "url": "https://acmedia.visualstudio.com/defaultcollection/azure%20devops%20projects/_git/azurecleanresourcegroupdeployment"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "vss-web-extension-sdk": "^5.141.0"
+    "azure-pipelines-task-lib": "^2.7.7"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.12",
+    "@types/q": "^1.5.1"
   }
 }
