@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "Task-cwlabsconsultingservices.azure-clean-resourcegroup-deployment-0.1.16",
+      "appliesTo": "cwlabsconsultingservices.azure-clean-resourcegroup-deployment-0.1.16.vsix",
+      "type": "launch"
+    }
+  ]
+}
