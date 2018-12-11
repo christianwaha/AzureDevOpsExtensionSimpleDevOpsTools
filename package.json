@@ -1,6 +1,6 @@
 {
   "name": "azure-clean-resourcegroup-deployments",
-  "version": "0.2.18",
+  "version": "0.2.20",
   "description": "",
   "main": "cleanup.js",
   "scripts": {
