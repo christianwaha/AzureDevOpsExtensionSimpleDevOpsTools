@@ -17,7 +17,7 @@
   "version": {
     "Major": 0,
     "Minor": 2,
-    "Patch": 21
+    "Patch": 23
   },
   "releaseNotes": "Script task consistency. Added support for macOS and Linux.",
   "demands": [
@@ -154,16 +154,10 @@
   ],
 
   "instanceNameFormat": "Azure Resourcegroup deployments cleanup",
+
   "execution": {
     "PowerShell3": {
-      "target": "powershell.ps1",
-      "platforms": [
-        "windows"
-      ]
-    },
-    "Node": {
-      "target": "powershell.js",
-      "argumentFormat": ""
+      "target": "AzureCleanupPowerShell.ps1"
     }
   },
   "messages": {
