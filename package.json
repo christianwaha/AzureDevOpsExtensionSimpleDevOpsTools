@@ -1,8 +1,8 @@
 {
-  "name": "azurecleanresourcegroupdeployment",
-  "version": "1.0.0",
+  "name": "azure-clean-resourcegroup-deployments",
+  "version": "0.0.15",
   "description": "",
-  "main": "index.js",
+  "main": "cleanup.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,11 +10,12 @@
     "type": "git",
     "url": "https://acmedia.visualstudio.com/defaultcollection/azure%20devops%20projects/_git/azurecleanresourcegroupdeployment"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Christian Waha - cwlabs consulting services",
+  "license": "MIT",
   "dependencies": {
     "@types/es6-promise": "^3.3.0",
-    "azure-pipelines-task-lib": "^2.7.7"
+    "azure-pipelines-task-lib": "^2.7.7",
+    "uuid": "^3.0.1"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.5",

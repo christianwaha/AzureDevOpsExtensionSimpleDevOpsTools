@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "azure-clean-resourcegroup-deployment",
   "name": "Clean Azure Resourcegroup deployment",
-  "version": "0.0.2",
+  "version": "0.0.15",
   "publisher": "cwlabsconsultingservices",
   "targets": [
     {
@@ -18,7 +18,7 @@
   },
   "files": [
     {
-      "path": "./"
+      "path": "buildAndReleaseTask"
     }
   ],
   "contributions": [
