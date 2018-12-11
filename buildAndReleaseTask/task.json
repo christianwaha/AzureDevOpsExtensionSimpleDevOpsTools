@@ -17,7 +17,7 @@
   "version": {
     "Major": 0,
     "Minor": 2,
-    "Patch": 20
+    "Patch": 21
   },
   "releaseNotes": "Script task consistency. Added support for macOS and Linux.",
   "demands": [
