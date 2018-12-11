@@ -1,0 +1,32 @@
+{
+  "id": "eb442700-b18e-4ead-8327-691a16f4f6ce",
+  "name": "clean-azureresourcegroup-deployments",
+  "friendlyName": "Clean Azure Resourcegroup deployment",
+  "description": "There is a limit of 800 deployments to an Azure Resourcegroup so it is recommended to clean it by every build or release.",
+  "helpMarkDown": "",
+  "category": [
+    "Azure Pipelines"
+  ],
+  "author": "cwlabsconsultingservices",
+  "version": {
+    "Major": 0,
+    "Minor": 1,
+    "Patch": 0
+  },
+  "instanceNameFormat": "Echo $(Clean Old Azure Resourcegroup deployments)",
+  "inputs": [
+    {
+      "name": "taskname",
+      "type": "string",
+      "label": "Clean Old Azure Resourcegroup deployments",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Clean Old Azure Resourcegroup deployments"
+    }
+  ],
+  "execution": {
+    "Node": {
+      "target": "index.js"
+    }
+  }
+}

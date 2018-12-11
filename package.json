@@ -13,9 +13,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/es6-promise": "^3.3.0",
     "azure-pipelines-task-lib": "^2.7.7"
   },
   "devDependencies": {
+    "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.12",
     "@types/q": "^1.5.1"
   }
