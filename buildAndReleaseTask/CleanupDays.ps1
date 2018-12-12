@@ -5,7 +5,10 @@ $deployments = Get-AzureRmResourceGroupDeployment -ResourceGroupName $resourcegr
 $countdeployments = $deployments.Count
 
 echo "Deleting deployment older than $Value days"
-$rowstodelete = $deployments | where { $_.Timestamp -lt ((get-date).AddDays($Value)) }
+
+
+
+$rowstodelete = $deployments | where { $_.Timestamp -lt ((get-date).AddDays(-[int]$Value)) }
 ForEach($row in $rowstodelete) 
 { 
      $deleteitem = [string]::Format("Delete now Resourcegroup:{0} Name:{1}", $resourcegroup.ResourceGroupName , $row.DeploymentName)

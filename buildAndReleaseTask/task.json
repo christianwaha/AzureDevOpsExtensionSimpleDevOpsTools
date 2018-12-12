@@ -17,9 +17,9 @@
   "version": {
     "Major": 1,
     "Minor": 0,
-    "Patch": 34
+    "Patch": 38
   },
-  "releaseNotes": "Script task consistency. Added support for macOS and Linux.",
+  "releaseNotes": "Bug Fix for days to life",
   "demands": [
     "azureps"
   ],
