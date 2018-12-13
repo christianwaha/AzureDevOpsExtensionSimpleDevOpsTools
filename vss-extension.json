@@ -21,6 +21,13 @@
       "path": "buildAndReleaseTask"
     }
   ],
+
+  "content": {
+    "details": {
+      "path": "overview.md"
+    }
+  },
+
   "contributions": [
     {
       "id": "azure-clean-resourcegroup-deployment",
