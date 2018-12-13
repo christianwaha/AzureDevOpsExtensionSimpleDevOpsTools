@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\buildAndReleaseTask",
     "\\images"
   ],
-  "SelectedNode": "\\index.ts",
+  "SelectedNode": "\\package-lock.json",
   "PreviewInSolutionExplorer": false
 }
