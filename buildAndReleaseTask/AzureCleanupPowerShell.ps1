@@ -10,6 +10,8 @@ $latestVersion = "LatestVersion"
 $targetType = Get-VstsInput -Name targetType
 $keepAmount = Get-VstsInput -Name amountKeep
 $keepDays = Get-VstsInput -Name daysKeep
+$ressourceGroup = Get-VstsInput -Name resourceGroupName
+
 
 $__vsts_input_errorActionPreference = Get-VstsInput -Name errorActionPreference
 $__vsts_input_failOnStandardError = Get-VstsInput -Name FailOnStandardError
@@ -23,10 +25,10 @@ $customTargetAzurePs = Get-VstsInput -Name CustomTargetAzurePs
 
 if ($targetType -eq "days") {
 	$cleanupscript = "$PSScriptRoot\CleanupDays.ps1"
-	$scriptArguments = "-Value $keepDays"
+	$scriptArguments = "-Value $keepDays -RessourceGroupName $ressourceGroup"
 } elseif ($targetType -eq "amount") {
 	$cleanupscript = "$PSScriptRoot\CleanupAmount.ps1"
-	$scriptArguments = "-Value $keepAmount"
+	$scriptArguments = "-Value $keepAmount -RessourceGroupName $ressourceGroup"
 } else {
 
 }
