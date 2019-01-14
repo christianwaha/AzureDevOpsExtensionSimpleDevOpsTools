@@ -2,6 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\buildAndReleaseTask",
+    "\\buildAndReleaseTask\\ps_modules\\VstsAzureHelpers_",
+    "\\buildAndReleaseTask\\ps_modules\\VstsTaskSdk",
     "\\images"
   ],
   "SelectedNode": "\\tests",
