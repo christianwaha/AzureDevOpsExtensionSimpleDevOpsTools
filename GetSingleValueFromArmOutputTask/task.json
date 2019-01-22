@@ -53,7 +53,7 @@
     },
    
     {
-      "name": "readedValue",
+      "name": "outputReadedValue",
       "type": "string",
       "label": "Value",
       "required": false,
