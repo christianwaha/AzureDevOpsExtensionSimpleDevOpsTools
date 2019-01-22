@@ -1,8 +1,8 @@
 {
   "id": "eb442700-b18e-4ead-8327-691a16f4f6ce",
-  "name": "clean-azureresourcegroup-deployments",
-  "friendlyName": "Clean Azure Resourcegroup deployment",
-  "description": "There is a limit of 800 deployments to an Azure Resourcegroup so it is recommended to clean it by every build or release.",
+  "name": "azure-devops-tools-getarmoutputvalue",
+  "friendlyName": "Get single value from ARM output variable",
+  "description": "When you deploy ARM templates to an Azure ResourceGroup it is often necessary to get a single response value and set it to a pipeline variable.",
   "helpMarkDown": "",
   "author": "cwlabsconsultingservices",
   "category": "Deploy",
@@ -19,11 +19,11 @@
     "Minor": 0,
     "Patch": <BUILDNUMBER>
   },
-  "releaseNotes": "Bug Fix for days to life",
+  "releaseNotes": "",
   "demands": [
     "azureps"
   ],
-  "minimumAgentVersion": "2.115.0",
+  "minimumAgentVersion": "2.119.1",
   "showEnvironmentVariables": true,
   "groups": [
     {
