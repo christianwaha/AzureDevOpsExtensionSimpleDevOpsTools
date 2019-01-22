@@ -27,143 +27,51 @@
   "showEnvironmentVariables": true,
   "groups": [
     {
-      "name": "AzureDetails",
+      "name": "ARMoutput",
       "displayName": "Azure Details",
       "isExpanded": true
-    },
-    {
-      "name": "advanced",
-      "displayName": "Advanced",
-      "isExpanded": false
     }
   ],
   "inputs": [
     {
-      "name": "ConnectedServiceName",
-      "aliases": [
-        "azureSubscription"
-      ],
-      "type": "connectedService:AzureRM",
-      "label": "Azure subscription",
+      "name": "armOutput",
+      "type": "string",
+      "label": "ARM output variable to extract from",
+      "groupName": "ARMoutput",
+      "required": true,
+      "defaultValue": "$(armoutput)",
+      "helpMarkDown": "Variable of your armoutput of a ressourcegroup step"
+    },
+    {
+      "name": "searchValue",
+      "type": "string",
+      "label": "Output name, which value is needed",
+      "groupName": "ARMoutput",
+      "required": true,
       "defaultValue": "",
-      "required": true,
-      "groupName": "AzureDetails",
-      "helpMarkDown": "Select the Azure Resource Manager subscription for the deployment."
+      "helpMarkDown": "The name of the value which should be readed from the ARM output object"
     },
+   
     {
-      "name": "resourceGroupName",
-      "type": "pickList",
-      "label": "Resource group",
-      "required": true,
-      "groupName": "AzureDetails",
-      "helpMarkDown": "Provide the name of a resource group.",
-      "properties": {
-        "EditableOptions": "True"
-      }
-    },
-    {
-      "name": "targetType",
-      "type": "radio",
-      "label": "Retention",
-      "required": false,
-      "groupName": "AzureDetails",
-      "defaultValue": "days",
-      "helpMarkDown": "Time to keep or amount to keep",
-      "options": {
-        "days": "Days to keep",
-        "amount": "Max items to keep"
-      }
-    },
-    {
-      "name": "daysKeep",
+      "name": "readedValue",
       "type": "string",
-      "label": "Days to keep",
-      "groupName": "AzureDetails",
-      "visibleRule": "targetType = days",
-      "required": true,
-      "defaultValue": 7,
-      "helpMarkDown": "Oldest ARM Deployment to keep."
-    },
-    {
-      "name": "amountKeep",
-      "type": "string",
-      "label": "Deployments to keep",
-      "groupName": "AzureDetails",
-      "visibleRule": "targetType = amount",
-      "required": true,
-      "defaultValue": 100,
-      "helpMarkDown": "How many ARM deployments should be kept. Only the newest will be kept"
-    },
-    {
-      "name": "errorActionPreference",
-      "type": "pickList",
-      "label": "ErrorActionPreference",
-      "required": false,
-      "defaultValue": "stop",
-      "groupName": "advanced",
-      "options": {
-        "stop": "Stop",
-        "continue": "Continue",
-        "silentlyContinue": "SilentlyContinue"
-      },
-      "helpMarkDown": "Prepends the line `$ErrorActionPreference = 'VALUE'` at the top of your script."
-    },
-    {
-      "name": "failOnStderr",
-      "type": "boolean",
-      "label": "Fail on Standard Error",
-      "required": false,
-      "defaultValue": "false",
-      "helpMarkDown": "If this is true, this task will fail if any errors are written to the error pipeline, or if any data is written to the Standard Error stream. Otherwise the task will rely on the exit code to determine failure.",
-      "groupName": "advanced"
-    },
-    {
-      "name": "ignoreLASTEXITCODE",
-      "type": "boolean",
-      "label": "Ignore $LASTEXITCODE",
-      "required": false,
-      "defaultValue": "false",
-      "helpMarkDown": "If this is false, the line `if ((Test-Path -LiteralPath variable:\\LASTEXITCODE)) { exit $LASTEXITCODE }` is appended to the end of your script. This will cause the last exit code from an external command to be propagated as the exit code of powershell. Otherwise the line is not appended to the end of your script.",
-      "groupName": "advanced"
-    },
-    {
-      "name": "pwsh",
-      "type": "boolean",
-      "label": "Use PowerShell Core",
-      "required": false,
-      "defaultValue": "false",
-      "helpMarkDown": "If this is true, then on Windows the task will use pwsh.exe from your PATH instead of powershell.exe.",
-      "groupName": "advanced"
-    },
-    {
-      "name": "workingDirectory",
-      "type": "filePath",
-      "label": "Working Directory",
+      "label": "Value",
       "required": false,
       "defaultValue": "",
-      "helpMarkDown": "Working directory where the script is run.",
-      "groupName": "advanced"
+      "helpMarkDown": "Value set in the ARM output object",
+      "groupName": "ARMoutput"
     }
   ],
   "dataSourceBindings": [
-    {
-      "target": "resourceGroupName",
-      "endpointId": "$(ConnectedServiceName)",
-      "dataSourceName": "AzureResourceGroups"
-    }
   ],
 
-  "instanceNameFormat": "Azure Resourcegroup deployments cleanup",
+  "instanceNameFormat": "Azure ARM output readout value: $(searchValue)",
 
   "execution": {
     "PowerShell3": {
-      "target": "AzureCleanupPowerShell.ps1"
+      "target": "AzureDevOpsArmValueRead.ps1"
     }
   },
   "messages": {
-    "InvalidScriptArguments0": "Invalid script arguments '{0}'. Line breaks are not allowed.",
-    "InvalidScriptPath0": "Invalid script path '{0}'. Invalid path characters specified.",
-    "InvalidAzurePsVersion": "The Azure PowerShell version '{0}' specified is not in the correct format. Please check the format. An example of correct format is 1.0.1",
-    "OverrideAzurePowerShellVersion": "The Azure PowerShell version '{0}' is not supported for Hosted Agent. Overriding it with version '{1}'. Consider changing the version selected."
   }
 }
