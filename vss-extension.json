@@ -14,7 +14,7 @@
     "Azure Pipelines"
   ],
   "icons": {
-    "default": "images/ResourceGroup_Deployment_delete.png"
+    "default": "images/AzureDevOpsSimpleTools.png"
   },
   "files": [
     {
