@@ -1,5 +1,5 @@
 {
-  "id": "eb442700-b18e-4ead-8327-691a16f4f6ce",
+  "id": "05184f1c-b377-4f98-b0d4-c8269a32d250",
   "name": "azure-devops-tools-getarmoutputvalue",
   "friendlyName": "Get single value from ARM output variable",
   "description": "When you deploy ARM templates to an Azure ResourceGroup it is often necessary to get a single response value and set it to a pipeline variable.",
