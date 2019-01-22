@@ -16,7 +16,13 @@ $value = $searchObject.$searchvalue.value
 
 Write-Host $armOutput
 Write-Host $searchValue
+Write-Host $outputReadedValue
 Write-Host $value
 
-Write-Host "##vso[task.setvariable variable=$outputReadedValue;]$value"
-
+if(-not [string]::IsNullOrEmpty($value))
+{
+    if(-not [string]::IsNullOrEmpty($outputReadedValue))
+    {
+        Write-Host "##vso[task.setvariable variable=$outputReadedValue;]$value"
+    }
+}
