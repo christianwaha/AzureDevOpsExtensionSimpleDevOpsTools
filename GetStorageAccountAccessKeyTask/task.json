@@ -1,7 +1,7 @@
 {
   "id": "a333c9da-7c0c-4cc7-b464-589a226cb236",
   "name": "azure-devops-tools-getstorageaccountaccesskey",
-  "friendlyName": "Get first accesskey of an defined storage account",
+  "friendlyName": "Get first accesskey of a defined storage account",
   "description": "For AzureFunction deployment it is an advantage to set the storage account access key to work, can be also used for other parts of an deployment",
   "helpMarkDown": "",
   "author": "cwlabsconsultingservices",
