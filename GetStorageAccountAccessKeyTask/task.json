@@ -71,6 +71,7 @@
         "label": "RM Storage Account",
         "defaultValue": "",
         "required": true,
+        "groupName": "AzureStorageAccountDetails",
         "helpMarkDown": "Specify a pre-existing ARM storage account.",
         "properties": {
             "EditableOptions": "True"
@@ -99,7 +100,7 @@
     }
   ],
 
-  "instanceNameFormat": "Azure ARM output readout value: $(searchValue)",
+  "instanceNameFormat": "Azure Storage Account AccessKey: $(StorageAccountRM)",
 
   "execution": {
     "PowerShell3": {
