@@ -20,6 +20,9 @@
     {
       "path": "GetSingleValueFromArmOutputTask"
     }
+    {
+      "path": "GetStorageAccountAccessKeyTask"
+    }
   ],
 
   "content": {
@@ -37,6 +40,16 @@
       ],
       "properties": {
         "name": "GetSingleValueFromArmOutputTask"
+      }
+    },
+    {
+      "id": "azure-devops-tools-getstorageaccountaccesskey",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "GetStorageAccountAccessKeyTask"
       }
     }
   ]

@@ -1,0 +1,111 @@
+{
+  "id": "a333c9da-7c0c-4cc7-b464-589a226cb236",
+  "name": "azure-devops-tools-getstorageaccountaccesskey",
+  "friendlyName": "Get first accesskey of an defined storage account",
+  "description": "For AzureFunction deployment it is an advantage to set the storage account access key to work, can be also used for other parts of an deployment",
+  "helpMarkDown": "",
+  "author": "cwlabsconsultingservices",
+  "category": "Deploy",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "runsOn": [
+    "Agent",
+    "DeploymentGroup"
+  ],
+  "version": {
+    "Major": 1,
+    "Minor": 0,
+    "Patch": <BUILDNUMBER>
+  },
+  "releaseNotes": "",
+  "demands": [
+    "azureps"
+  ],
+  "minimumAgentVersion": "2.119.1",
+  "showEnvironmentVariables": true,
+  "groups": [
+    {
+      "name": "AzureStorageAccountDetails",
+      "displayName": "Azure Details",
+      "isExpanded": true
+    },
+    {
+      
+      "name": "output",
+      "displayName": "Output Values",
+      "isExpanded": true
+    }
+  ],
+  "inputs": [
+    {
+      "name": "ConnectedServiceName",
+      "aliases": [
+        "azureSubscription"
+      ],
+      "type": "connectedService:AzureRM",
+      "label": "Azure subscription",
+      "defaultValue": "",
+      "required": true,
+      "groupName": "AzureStorageAccountDetails",
+      "helpMarkDown": "Select the Azure Resource Manager subscription for the deployment."
+    },
+    {
+      "name": "resourceGroupName",
+      "type": "pickList",
+      "label": "Resource group",
+      "required": true,
+      "groupName": "AzureStorageAccountDetails",
+      "helpMarkDown": "Provide the name of a resource group.",
+      "properties": {
+        "EditableOptions": "True"
+      }
+    },
+      {
+      "name": "StorageAccountRM",
+        "aliases": [
+            "storage"
+        ],
+        "type": "pickList",
+        "label": "RM Storage Account",
+        "defaultValue": "",
+        "required": true,
+        "helpMarkDown": "Specify a pre-existing ARM storage account.",
+        "properties": {
+            "EditableOptions": "True"
+        }
+    },
+    {
+      "name": "outputStorageKey",
+      "type": "string",
+      "label": "Storage Account AccessKey",
+      "required": false,
+      "defaultValue": "",
+      "groupName": "output",
+      "helpMarkDown": "Token to Access Storage Account"
+    }
+  ],
+  "dataSourceBindings": [
+    {
+      "target": "resourceGroupName",
+      "endpointId": "$(ConnectedServiceName)",
+      "dataSourceName": "AzureResourceGroups"
+    },
+    {
+      "target": "StorageAccountRM",
+      "endpointId": "$(ConnectedServiceNameARM)",
+      "dataSourceName": "AzureStorageAccountRM"
+    }
+  ],
+
+  "instanceNameFormat": "Azure ARM output readout value: $(searchValue)",
+
+  "execution": {
+    "PowerShell3": {
+      "target": "AzureStorageAccountAccessKey.ps1"
+    }
+  },
+  "messages": {
+  }
+}
