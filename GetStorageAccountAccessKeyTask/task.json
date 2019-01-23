@@ -68,7 +68,7 @@
             "storage"
         ],
         "type": "pickList",
-        "label": "RM Storage Account",
+        "label": "Storage Account",
         "defaultValue": "",
         "required": true,
         "groupName": "AzureStorageAccountDetails",
