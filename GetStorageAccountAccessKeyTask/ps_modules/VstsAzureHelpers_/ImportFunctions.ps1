@@ -1,4 +1,4 @@
-function Import-AzureModule {
+﻿function Import-AzureModule {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)]
