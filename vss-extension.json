@@ -19,7 +19,7 @@
   "files": [
     {
       "path": "GetSingleValueFromArmOutputTask"
-    }
+    },
     {
       "path": "GetStorageAccountAccessKeyTask"
     }
