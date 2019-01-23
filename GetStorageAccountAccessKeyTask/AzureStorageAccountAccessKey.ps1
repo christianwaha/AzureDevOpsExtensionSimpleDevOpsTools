@@ -14,10 +14,6 @@ $storageAccount  = Get-VstsInput -Name StorageAccountRM
 $outputStorageKey =  Get-VstsInput -Name outputStorageKey
 
 
-
-# Import RemoteDeployer
-Import-Module $PSScriptRoot\ps_modules\RemoteDeployer
-
 # Initialize Azure.
 Import-Module $PSScriptRoot\ps_modules\VstsAzureHelpers_
 
